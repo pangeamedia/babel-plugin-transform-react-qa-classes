@@ -25,8 +25,9 @@ function functionBodyPushAttributes(t, path, options, componentName) {
     openingElement.node.attributes.some(
       a => a.name && a.name.name === options.attribute
     )
-  )
+  ) {
     return;
+  }
   openingElement.node.attributes.push(
     t.jSXAttribute(
       t.jSXIdentifier(options.attribute),
@@ -83,8 +84,9 @@ export default function({ types: t }) {
               openingElement.node.attributes.some(
                 a => a.name && a.name.name === options.attribute
               )
-            )
+            ) {
               return;
+            }
             openingElement.node.attributes.push(
               t.jSXAttribute(
                 t.jSXIdentifier(options.attribute),
